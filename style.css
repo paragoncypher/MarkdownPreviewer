@@ -1,0 +1,87 @@
+html { font-size: 10px; }
+
+body {
+    box-sizing: border-box;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.App {
+    display: grid;
+    grid-template-areas:
+      'title title'
+      'editor preview';
+    place-items: center;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+#title {
+    grid-area: title;
+    color: #eee;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 5rem;
+    text-shadow: 2px 2px #333;
+}
+
+#editor,
+#preview {
+    width: 500px;
+    height: 600px;
+    padding: 24px 14px 14px 14px;
+    border: none;
+    border-radius: 3px;
+}
+
+#editor {
+    grid-area: editor;
+    background: #eee;
+}
+
+#preview {
+    grid-area: preview;
+    background: #333;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    overflow-y: auto;
+}
+
+a {
+    color: #D6EFA3;
+}
+
+li {
+    margin-left: 3rem;
+}
+
+code {
+  background: white;
+  color: grey;
+}
+
+blockquote {
+    margin-left: 2rem;
+    padding-left: 0.6rem;
+    border-left: 0.4rem solid grey;
+}
+
+@media only screen and (max-width: 1050px) {
+    .App {
+        grid-template-areas:
+        'title'
+        'editor'
+        'preview';
+    }
+
+    #editor,
+    #preview {
+        width: 90vw;
+        height: 400px;
+    }
+}
